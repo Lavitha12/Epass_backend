@@ -21,18 +21,18 @@ import com.example.demo.model.Individual;
 import com.example.demo.service.IndividualService;
 
 @RestController
-@RequestMapping("/individualdetails")
+@RequestMapping("/individual")
 public class IndividualController 
 {
 	@Autowired
 	IndividualService inservice;
 	
-	@GetMapping("/individual")
+	@GetMapping("/getallusers")
 	public List<Individual> get() throws BusinessException{	
 		return inservice.get();
 	}
 	
-	@RequestMapping(value="/individual/{Name}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/getbyname/{Name}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Individual> getByName(@PathVariable("Name")String Name)
 	{
 		Individual individual = null;
@@ -51,20 +51,20 @@ public class IndividualController
 		return ResponseEntity.accepted().body(individual);
 	}
 	
-	@PostMapping("/individual")
+	@PostMapping("/save")
 	public Individual save(@RequestBody Individual inobj) throws BusinessException
 	{
 		inservice.save(inobj);
 		return inobj;		
 	}
 	
-	@PutMapping("/individual")
+	@PutMapping("/update")
 	public Individual update(@RequestBody Individual inobj) throws BusinessException {
 		inservice.save(inobj);
 		return inobj;	
 	}
 	
-	@RequestMapping(value="/individual/{Name}",method=RequestMethod.DELETE,produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/delete/{Name}",method=RequestMethod.DELETE,produces=MediaType.APPLICATION_JSON_VALUE)
 	public  ResponseEntity<Map<String, String>> delete(@PathVariable("Name") String Name) {
 		Map<String, String> response=new HashMap<>();
 		try {

@@ -21,18 +21,18 @@ import com.example.demo.model.Organisation;
 import com.example.demo.service.OrgService;
 
 @RestController
-@RequestMapping("/organisationdetails")
+@RequestMapping("/organisation")
 public class OrganisationController {
 
 	@Autowired
 	OrgService orgservice;
 	
-	@GetMapping("/organisation")
+	@GetMapping("/getallusers")
 	public List<Organisation> get() throws BusinessException{	
 		return orgservice.get();
 	}
 	
-	@RequestMapping(value="/organisation/{Name}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/getbyname/{Name}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Organisation> getByName(@PathVariable("Name")String Name)
 	{
 		Organisation org = null;
@@ -51,20 +51,20 @@ public class OrganisationController {
 		return ResponseEntity.accepted().body(org);
 	}
 	
-	@PostMapping("/organisation")
+	@PostMapping("/save")
 	public Organisation save(@RequestBody Organisation orgobj) throws BusinessException
 	{
 		orgservice.save(orgobj);
 		return orgobj;		
 	}
 	
-	@PutMapping("/organisation")
+	@PutMapping("/update")
 	public Organisation update(@RequestBody Organisation orgobj) throws BusinessException {
 		orgservice.save(orgobj);
 		return orgobj;	
 	}
 	
-	@RequestMapping(value="/organisation/{Name}",method=RequestMethod.DELETE,produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/delete/{Name}",method=RequestMethod.DELETE,produces=MediaType.APPLICATION_JSON_VALUE)
 	public  ResponseEntity<Map<String, String>> delete(@PathVariable("Name") String Name) {
 		Map<String, String> response=new HashMap<>();
 		try {

@@ -8,16 +8,19 @@ import javax.persistence.TypedQuery;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.exceptions.BusinessException;
 import com.example.demo.model.Individual;
 
-
+@Repository
 public class IndividualDAOImpl implements IndividualDAO {
 
 	@Autowired
 	private EntityManager entityManager;
 	
+	@Transactional
 	@Override
 	public List<Individual> get() throws BusinessException {
 		Session currentSession = entityManager.unwrap(Session.class);
@@ -26,6 +29,7 @@ public class IndividualDAOImpl implements IndividualDAO {
 		return list;
 	}
 
+	@Transactional
 	@Override
 	public Individual getByName(String Name) throws BusinessException {
 		Session currentSession = entityManager.unwrap(Session.class);
@@ -35,12 +39,14 @@ public class IndividualDAOImpl implements IndividualDAO {
 		return d;
 	}
 
+	@Transactional
 	@Override
 	public void save(Individual individual) throws BusinessException {
 		Session currentSession = entityManager.unwrap(Session.class);
 		currentSession.saveOrUpdate(individual);		
 	}
 
+	@Transactional
 	@Override
 	public void delete(String Name) throws BusinessException {
 		Session currentSession = entityManager.unwrap(Session.class);

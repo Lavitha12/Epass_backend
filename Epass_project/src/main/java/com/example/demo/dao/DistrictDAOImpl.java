@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.exceptions.BusinessException;
 import com.example.demo.model.District;
@@ -20,6 +21,7 @@ public class DistrictDAOImpl implements DistrictDAO {
 	@Autowired
 	private EntityManager entityManager;
 
+	@Transactional
 	@Override
 	public List<District> get() {
 		Session currentSession = entityManager.unwrap(Session.class);
@@ -28,12 +30,14 @@ public class DistrictDAOImpl implements DistrictDAO {
 		return list;
 	}
 
+	@Transactional
 	@Override
 	public void save(District district) {
 		Session currentSession = entityManager.unwrap(Session.class);
 		currentSession.saveOrUpdate(district);
 	}
 
+	@Transactional
 	@Override
 	public District getByName(String district_name) throws BusinessException {
 		Session currentSession = entityManager.unwrap(Session.class);
@@ -43,6 +47,7 @@ public class DistrictDAOImpl implements DistrictDAO {
 		return d;
 	}
 
+	@Transactional
 	@Override
 	public void delete(int id) throws BusinessException {
 		Session currentSession = entityManager.unwrap(Session.class);		

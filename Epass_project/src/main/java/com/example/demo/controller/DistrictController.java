@@ -35,7 +35,7 @@ public class DistrictController {
 	public District save(@RequestBody District districtobj) throws BusinessException
 	{
 		districtservice.save(districtobj);
-		return districtobj;		
+		return districtobj;	
 	}
 	
 //	@RequestMapping(value="/district/{id}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
