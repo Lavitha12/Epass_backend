@@ -31,10 +31,10 @@ public class OrganisationDAOImpl implements OrganisationDAO {
 
 	@Transactional
 	@Override
-	public Organisation getByName(String Name) throws BusinessException {
+	public Organisation getByName(String name) throws BusinessException {
 		Session currentSession = entityManager.unwrap(Session.class);
-		TypedQuery<Organisation> query=currentSession.createQuery("from Organisation where Name=:Name", Organisation.class);
-		query.setParameter("Name", Name);
+		TypedQuery<Organisation> query=currentSession.createQuery("from Organisation where name=:name", Organisation.class);
+		query.setParameter("Name", name);
 		Organisation org=(Organisation) query.getSingleResult();
 		return org;
 	}
@@ -48,10 +48,10 @@ public class OrganisationDAOImpl implements OrganisationDAO {
 
 	@Transactional
 	@Override
-	public void delete(String Name) throws BusinessException {
-		Session currentSession = entityManager.unwrap(Session.class);
-		Organisation org= currentSession.get(Organisation.class,Name);
-		currentSession.delete(org);
+	public void delete(int id) throws BusinessException {
+		Session currentSession = entityManager.unwrap(Session.class);		
+		Organisation d = currentSession.get(Organisation.class,id);
+		currentSession.delete(d);	
 		
 	}
 

@@ -20,18 +20,18 @@ import com.example.demo.model.District;
 import com.example.demo.service.DistrictService;
 
 @RestController
-@RequestMapping("/districtdetails")
+@RequestMapping("/district")
 public class DistrictController {
 	
 	@Autowired
 	DistrictService districtservice;
 	
-	@GetMapping("/district")
+	@GetMapping("/getall")
 	public List<District> get() throws BusinessException{	
 		return districtservice.get();
 	}
 	
-	@PostMapping("/district")
+	@PostMapping("/save")
 	public District save(@RequestBody District districtobj) throws BusinessException
 	{
 		districtservice.save(districtobj);
@@ -55,19 +55,19 @@ public class DistrictController {
 //		return ResponseEntity.accepted().body(district);
 //	}
 	
-	@DeleteMapping("/district/{id}")
+	@DeleteMapping("/delete/{id}")
 	public String delete(@PathVariable int id) throws BusinessException {
 		districtservice.delete(id);
 		return "Employee id: "+id+" is deleted.";	
 	}
 	
-	@PutMapping("/district")
+	@PutMapping("/update")
 	public District update(@RequestBody District districtobj) throws BusinessException {
 		districtservice.save(districtobj);
 		return districtobj;	
 	}
 	
-	@RequestMapping(value="/district/{district_name}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/getbyName/{district_name}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<District> getByName(@PathVariable("district_name")String district_name)
 	{
 		District district = null;

@@ -31,10 +31,10 @@ public class IndividualDAOImpl implements IndividualDAO {
 
 	@Transactional
 	@Override
-	public Individual getByName(String Name) throws BusinessException {
+	public Individual getByName(String name) throws BusinessException {
 		Session currentSession = entityManager.unwrap(Session.class);
-		TypedQuery<Individual> query=currentSession.createQuery("from Individual where Name=:Name", Individual.class);
-		query.setParameter("Name", Name);
+		TypedQuery<Individual> query=currentSession.createQuery("from Individual where name=:name", Individual.class);
+		query.setParameter("name", name);
 		Individual d=(Individual) query.getSingleResult();
 		return d;
 	}
@@ -48,11 +48,10 @@ public class IndividualDAOImpl implements IndividualDAO {
 
 	@Transactional
 	@Override
-	public void delete(String Name) throws BusinessException {
-		Session currentSession = entityManager.unwrap(Session.class);
-		Individual in= currentSession.get(Individual.class,Name);
-		currentSession.delete(in);
-		
+	public void delete(int id) throws BusinessException {
+		Session currentSession = entityManager.unwrap(Session.class);		
+		Individual d = currentSession.get(Individual.class,id);
+		currentSession.delete(d);		
 	}
 
 }

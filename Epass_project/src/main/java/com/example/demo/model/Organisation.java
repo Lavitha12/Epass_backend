@@ -14,31 +14,31 @@ public class Organisation {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column
-	private int id;
+	private int id;	
 	@Column
-	private String Name;
+	private String name;
 	@Column
-	private String Email;
+	private String email;
 	@Column
-	private String Designation;
+	private String designation;
 	@Column
-	private String org_address;
+	private String orgaddress;
 	@Column
-	private String From_district;
+	private String fromdistrict;
 	@Column
-	private String To_district;
+	private String todistrict;
 	@Column
-	private String To_address;
+	private String toaddress;
 	@Column
-	private String proof_type;
+	private String prooftype;
 	@Column
-	private String proof_number;
+	private String proofnumber;
 	@Column
-	private int Workersno;
+	private int workersno;
 	@Column
     private String vehicle;
 	@Column
-    private String vehicle_number; 
+    private String vehiclenumber; 
 	public int getId() {
 		return id;
 	}
@@ -46,64 +46,64 @@ public class Organisation {
 		this.id = id;
 	}
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	public String getDesignation() {
-		return Designation;
+		return designation;
 	}
 	public void setDesignation(String designation) {
-		Designation = designation;
+		this.designation = designation;
 	}
-	public String getOrg_address() {
-		return org_address;
+	public String getOrgaddress() {
+		return orgaddress;
 	}
-	public void setOrg_address(String org_address) {
-		this.org_address = org_address;
+	public void setOrgaddress(String orgaddress) {
+		this.orgaddress = orgaddress;
 	}
-	public String getFrom_district() {
-		return From_district;
+	public String getFromdistrict() {
+		return fromdistrict;
 	}
-	public void setFrom_district(String from_district) {
-		From_district = from_district;
+	public void setFromdistrict(String fromdistrict) {
+		this.fromdistrict = fromdistrict;
 	}
-	public String getTo_district() {
-		return To_district;
+	public String getTodistrict() {
+		return todistrict;
 	}
-	public void setTo_district(String to_district) {
-		To_district = to_district;
+	public void setTodistrict(String todistrict) {
+		this.todistrict = todistrict;
 	}
-	public String getTo_address() {
-		return To_address;
+	public String getToaddress() {
+		return toaddress;
 	}
-	public void setTo_address(String to_address) {
-		To_address = to_address;
+	public void setToaddress(String toaddress) {
+		this.toaddress = toaddress;
 	}
-	public String getProof_type() {
-		return proof_type;
+	public String getProoftype() {
+		return prooftype;
 	}
-	public void setProof_type(String proof_type) {
-		this.proof_type = proof_type;
+	public void setProoftype(String prooftype) {
+		this.prooftype = prooftype;
 	}
-	public String getProof_number() {
-		return proof_number;
+	public String getProofnumber() {
+		return proofnumber;
 	}
-	public void setProof_number(String proof_number) {
-		this.proof_number = proof_number;
+	public void setProofnumber(String proofnumber) {
+		this.proofnumber = proofnumber;
 	}
 	public int getWorkersno() {
-		return Workersno;
+		return workersno;
 	}
 	public void setWorkersno(int workersno) {
-		Workersno = workersno;
+		this.workersno = workersno;
 	}
 	public String getVehicle() {
 		return vehicle;
@@ -111,18 +111,18 @@ public class Organisation {
 	public void setVehicle(String vehicle) {
 		this.vehicle = vehicle;
 	}
-	public String getVehicle_number() {
-		return vehicle_number;
+	public String getVehiclenumber() {
+		return vehiclenumber;
 	}
-	public void setVehicle_number(String vehicle_number) {
-		this.vehicle_number = vehicle_number;
+	public void setVehiclenumber(String vehiclenumber) {
+		this.vehiclenumber = vehiclenumber;
 	}
 	@Override
 	public String toString() {
-		return "Organisation [id=" + id + ", Name=" + Name + ", Email=" + Email + ", Designation=" + Designation
-				+ ", org_address=" + org_address + ", From_district=" + From_district + ", To_district=" + To_district
-				+ ", To_address=" + To_address + ", proof_type=" + proof_type + ", proof_number=" + proof_number
-				+ ", Workersno=" + Workersno + ", vehicle=" + vehicle + ", vehicle_number=" + vehicle_number + "]";
+		return "Organisation [id=" + id + ", name=" + name + ", email=" + email + ", designation=" + designation
+				+ ", orgaddress=" + orgaddress + ", fromdistrict=" + fromdistrict + ", todistrict=" + todistrict
+				+ ", toaddress=" + toaddress + ", prooftype=" + prooftype + ", proofnumber=" + proofnumber
+				+ ", workersno=" + workersno + ", vehicle=" + vehicle + ", vehiclenumber=" + vehiclenumber + "]";
 	}
 	
 }

@@ -10,5 +10,5 @@ public interface IndividualService {
 	List<Individual> get() throws BusinessException;
 	Individual getByName(String Name) throws BusinessException;
 	void save(Individual individual) throws BusinessException;
-	void delete(String Name) throws BusinessException;
+	void delete(int id) throws BusinessException;
 }

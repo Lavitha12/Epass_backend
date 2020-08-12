@@ -16,33 +16,34 @@ public class Individual {
 	@Column
 	private int id;
 	@Column
-	private String Name;
+	private String name;
 	@Column
-	private int Age;
+	private int age;
 	@Column
-	private String Guardian_name;
+	private String guardian;
 	@Column
-	private String Gender;
+	private String gender;
 	@Column
-	private int Travellers ;
+	private int travellers ;
 	@Column
-    private String ID_proof ;
+    private String idproof ;
 	@Column
-    private String ID_proof_number;
+    private String proofno;
 	@Column
     private String vehicle;
 	@Column
-    private String vehicle_number;
+    private String vehicleno;
 	@Column
-    private String Reason ;
+    private String reason ;
 	@Column
-    private String Pass_requiring_dates ;
+    private String dates ;
 	@Column
-    private String From_district ;
+    private String fromdistrict ;
 	@Column
-    private String To_district ;
+    private String todistrict ;
 	@Column
-    private String  To_address;
+    private String  toaddress;
+	
 	public int getId() {
 		return id;
 	}
@@ -50,46 +51,46 @@ public class Individual {
 		this.id = id;
 	}
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	public int getAge() {
-		return Age;
+		return age;
 	}
 	public void setAge(int age) {
-		Age = age;
+		this.age = age;
 	}
-	public String getGuardian_name() {
-		return Guardian_name;
+	public String getGuardian() {
+		return guardian;
 	}
-	public void setGuardian_name(String guardian_name) {
-		Guardian_name = guardian_name;
+	public void setGuardian(String guardian) {
+		this.guardian = guardian;
 	}
 	public String getGender() {
-		return Gender;
+		return gender;
 	}
 	public void setGender(String gender) {
-		Gender = gender;
+		this.gender = gender;
 	}
 	public int getTravellers() {
-		return Travellers;
+		return travellers;
 	}
 	public void setTravellers(int travellers) {
-		Travellers = travellers;
+		this.travellers = travellers;
 	}
-	public String getID_proof() {
-		return ID_proof;
+	public String getIdproof() {
+		return idproof;
 	}
-	public void setID_proof(String iD_proof) {
-		ID_proof = iD_proof;
+	public void setIdproof(String idproof) {
+		this.idproof = idproof;
 	}
-	public String getID_proof_number() {
-		return ID_proof_number;
+	public String getProofno() {
+		return proofno;
 	}
-	public void setID_proof_number(String iD_proof_number) {
-		ID_proof_number = iD_proof_number;
+	public void setProofno(String proofno) {
+		this.proofno = proofno;
 	}
 	public String getVehicle() {
 		return vehicle;
@@ -97,49 +98,47 @@ public class Individual {
 	public void setVehicle(String vehicle) {
 		this.vehicle = vehicle;
 	}
-	public String getVehicle_number() {
-		return vehicle_number;
+	public String getVehicleno() {
+		return vehicleno;
 	}
-	public void setVehicle_number(String vehicle_number) {
-		this.vehicle_number = vehicle_number;
+	public void setVehicleno(String vehicleno) {
+		this.vehicleno = vehicleno;
 	}
 	public String getReason() {
-		return Reason;
+		return reason;
 	}
 	public void setReason(String reason) {
-		Reason = reason;
+		this.reason = reason;
 	}
-	public String getPass_requiring_dates() {
-		return Pass_requiring_dates;
+	public String getDates() {
+		return dates;
 	}
-	public void setPass_requiring_dates(String pass_requiring_dates) {
-		Pass_requiring_dates = pass_requiring_dates;
+	public void setDates(String dates) {
+		this.dates = dates;
 	}
-	public String getFrom_district() {
-		return From_district;
+	public String getFromdistrict() {
+		return fromdistrict;
 	}
-	public void setFrom_district(String from_district) {
-		From_district = from_district;
+	public void setFromdistrict(String fromdistrict) {
+		this.fromdistrict = fromdistrict;
 	}
-	public String getTo_district() {
-		return To_district;
+	public String getTodistrict() {
+		return todistrict;
 	}
-	public void setTo_district(String to_district) {
-		To_district = to_district;
+	public void setTodistrict(String todistrict) {
+		this.todistrict = todistrict;
 	}
-	public String getTo_address() {
-		return To_address;
+	public String getToaddress() {
+		return toaddress;
 	}
-	public void setTo_address(String to_address) {
-		To_address = to_address;
+	public void setToaddress(String toaddress) {
+		this.toaddress = toaddress;
 	}
 	@Override
 	public String toString() {
-		return "Individual [id=" + id + ", Name=" + Name + ", Age=" + Age + ", Guardian_name=" + Guardian_name
-				+ ", Gender=" + Gender + ", Travellers=" + Travellers + ", ID_proof=" + ID_proof + ", ID_proof_number="
-				+ ID_proof_number + ", vehicle=" + vehicle + ", vehicle_number=" + vehicle_number + ", Reason=" + Reason
-				+ ", Pass_requiring_dates=" + Pass_requiring_dates + ", From_district=" + From_district
-				+ ", To_district=" + To_district + ", To_address=" + To_address + "]";
-	}
-	
+		return "Individual [id=" + id + ", name=" + name + ", age=" + age + ", guardian=" + guardian + ", gender="
+				+ gender + ", travellers=" + travellers + ", idproof=" + idproof + ", proofno=" + proofno + ", vehicle="
+				+ vehicle + ", vehicleno=" + vehicleno + ", reason=" + reason + ", dates=" + dates + ", fromdistrict="
+				+ fromdistrict + ", todistrict=" + todistrict + ", toaddress=" + toaddress + "]";
+	}	
 }

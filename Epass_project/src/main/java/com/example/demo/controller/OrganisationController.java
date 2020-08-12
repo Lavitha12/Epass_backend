@@ -1,12 +1,10 @@
 package com.example.demo.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -64,18 +62,10 @@ public class OrganisationController {
 		return orgobj;	
 	}
 	
-	@RequestMapping(value="/delete/{Name}",method=RequestMethod.DELETE,produces=MediaType.APPLICATION_JSON_VALUE)
-	public  ResponseEntity<Map<String, String>> delete(@PathVariable("Name") String Name) {
-		Map<String, String> response=new HashMap<>();
-		try {
-			orgservice.delete(Name);
-			response.put("OK","Epass details got deleted");
-			return ResponseEntity.accepted().body(response);
-		} catch (BusinessException e) {			
-			e.printStackTrace();
-			response.put("error", e.getMessage());
-			return ResponseEntity.badRequest().body(response);
-		}
-     }
+	@DeleteMapping("/delete/{id}")
+	public String delete(@PathVariable int id) throws BusinessException {
+		orgservice.delete(id);
+		return "Employee id: "+id+" is deleted.";	
+	}
 
 }

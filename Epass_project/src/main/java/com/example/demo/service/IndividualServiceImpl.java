@@ -36,10 +36,11 @@ public class IndividualServiceImpl implements IndividualService {
 		
 	}
 
-	
+
 	@Override
-	public void delete(String Name) throws BusinessException {
-		indao.delete(Name);		
+	public void delete(int id) throws BusinessException {
+		indao.delete(id);
+		
 	}
 	
 }

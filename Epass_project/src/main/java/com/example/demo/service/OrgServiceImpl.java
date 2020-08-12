@@ -34,10 +34,11 @@ public class OrgServiceImpl implements OrgService {
 		
 	}
 
+	
+	
 	@Override
-	public void delete(String Name) throws BusinessException {
-		orgdao.delete(Name);
-		
+	public void delete(int id) throws BusinessException {
+		orgdao.delete(id);				
 	}
 
 }
